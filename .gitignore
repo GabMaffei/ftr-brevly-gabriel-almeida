@@ -1,0 +1,105 @@
+# =================================================================
+# Arquivos de Dependências e Cache
+# =================================================================
+# Ignora os módulos de node em qualquer diretório
+**/node_modules/
+
+# Arquivos de log de gerenciadores de pacotes
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log
+
+# Arquivos de lock de outros gerenciadores (se você usa pnpm, não precisa do package-lock)
+package-lock.json
+yarn.lock
+
+# Cache de ferramentas
+.cache/
+.parcel-cache/
+.next/
+.tmp/
+temp/
+.vite/
+.vercel/
+
+# =================================================================
+# Build e Arquivos Gerados
+# =================================================================
+# Saídas de build do frontend e backend
+**/dist/
+**/dist-ssr/
+**/build/
+
+# Outros artefatos de build
+out/
+.output/
+tsconfig.tsbuildinfo
+
+# =================================================================
+# Logs e Arquivos de Ambiente
+# =================================================================
+# Logs genéricos
+logs
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos de ambiente - NUNCA comite informações sensíveis
+**/.env
+**/.env.local
+**/.env.*.local
+!.env.example
+
+# =================================================================
+# IDEs e Editores
+# =================================================================
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs (WebStorm, etc.)
+.idea/
+
+# Outros
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# =================================================================
+# Ferramentas de Código e Testes
+# =================================================================
+# Biome (Linter/Formatter)
+.biome/
+
+# Testes e Cobertura de código
+coverage/
+.nyc_output/
+cypress/
+
+# =================================================================
+# Docker
+# =================================================================
+.docker/
+docker-compose.override.yml
+
+# =================================================================
+# Arquivos específicos de Sistema Operacional
+# =================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini

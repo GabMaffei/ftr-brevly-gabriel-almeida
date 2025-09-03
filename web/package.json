@@ -1,0 +1,48 @@
+{
+  "name": "web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "biome lint ./src",
+    "format": "biome format --write ./src",
+    "check": "biome check --apply ./src"
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
+    "@phosphor-icons/react": "^2.1.10",
+    "@radix-ui/react-scroll-area": "^1.2.10",
+    "@tailwindcss/vite": "^4.1.12",
+    "@tanstack/react-query": "^5.85.9",
+    "axios": "^1.11.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.62.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.8.2",
+    "tailwind-merge": "^3.3.1",
+    "tailwind-variants": "^3.1.0",
+    "tailwindcss": "^4.1.12",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
+  }
+}
