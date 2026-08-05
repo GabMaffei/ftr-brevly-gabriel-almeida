@@ -1,63 +1,81 @@
-# 🚀 Desafio Fase 1 - Brev.ly
+<p align="right">
+  <a href="./README.pt-BR.md">🇧🇷 Português</a>
+</p>
 
-Um encurtador de URLs FullStack desenvolvido como parte do desafio da pós-graduação Tech Developer 360 da [Faculdade de Tecnologia Rocketseat (FTR)](https://ftr.rocketseat.com.br/).
+# 🚀 Phase 1 Challenge — Brev.ly
 
-O **Brev.ly** permite criar, listar e remover links encurtados, acompanhar relatórios de acessos e realizar o redirecionamento correto para o link original.  
-O projeto foi construído em duas partes:
+A full-stack URL shortener developed as part of the Tech Developer 360 postgraduate program at [Rocketseat College of Technology](https://ftr.rocketseat.com.br/).
 
-- **Backend (`server`)** → API com Fastify, Drizzle e Postgres, além da camada de DevOps com Docker.
-- **Frontend (`web`)** → Aplicação React SPA utilizando Vite, TailwindCSS e React Query.
+**Brev.ly** allows users to create, list, and delete shortened links, track access statistics, export reports, and correctly redirect shortened URLs to their original destinations.
 
-## ✨ Funcionalidades
+The project was built in two parts:
+
+- **Backend (`server`)** → REST API built with Fastify, Drizzle ORM, and PostgreSQL, including a DevOps layer with Docker.
+- **Frontend (`web`)** → React single-page application built with Vite, Tailwind CSS, and TanStack Query.
+
+## 📸 Preview
+
+![Brev.ly application interface](./preview.gif)
+
+## ✨ Features
 
 ### Backend
-- [x] Criar links encurtados com validação
-- [x] Deletar links
-- [x] Buscar a URL original via link encurtado
-- [x] Listar todas as URLs cadastradas
-- [x] Incrementar contador de acessos
-- [x] Exportar relatórios em CSV (com upload em CDN)
-- [x] Nome aleatório/único para arquivos CSV
-- [x] Listagem performática
+
+- [x] Create shortened links with input validation
+- [x] Delete links
+- [x] Retrieve the original URL from a shortened link
+- [x] List all registered URLs
+- [x] Increment link access counters
+- [x] Export access reports as CSV files with CDN upload
+- [x] Generate unique and randomized CSV filenames
+- [x] Optimized link listing
 
 ### Frontend
-- [x] Cadastro de novos links
-- [x] Listagem de links cadastrados
-- [x] Deleção de links
-- [x] Redirecionamento automático de links encurtados
-- [x] Exibição da quantidade de acessos
-- [x] Download de relatório em CSV
-- [x] Responsividade (desktop e mobile)
-- [x] Tratamento de estados (loading, erros, empty states)
 
-## 🛠️ Tecnologias Utilizadas
+- [x] Create new shortened links
+- [x] Display registered links
+- [x] Delete links
+- [x] Automatically redirect shortened URLs
+- [x] Display the number of accesses for each link
+- [x] Download access reports as CSV files
+- [x] Responsive layout for desktop and mobile devices
+- [x] Handle loading, error, and empty states
+
+## 🛠️ Technologies
 
 ### Backend
+
 - **TypeScript**
 - **Fastify**
 - **Drizzle ORM**
-- **Postgres**
+- **PostgreSQL**
 - **Docker**
 
 ### Frontend
-- **React 19** + **Vite**
+
+- **React 19** with **Vite**
 - **TypeScript**
-- **TailwindCSS** + **tailwind-variants** + **tailwind-merge**
-- **React Query** (TanStack)
-- **React Hook Form** + **Zod**
+- **Tailwind CSS**, **tailwind-variants**, and **tailwind-merge**
+- **TanStack Query**
+- **React Hook Form** with **Zod**
 - **React Hot Toast**
-- **Phosphor Icons** e **Radix UI ScrollArea**
+- **Phosphor Icons**
+- **Radix UI ScrollArea**
 
-## 📂 Estrutura do Repositório
+## 📂 Repository Structure
+
+```text
 /
+├── web/      # Frontend application built with React and Vite
+└── server/   # Backend API built with Fastify, PostgreSQL, and Docker
+```
 
-├── web/ # Aplicação Frontend (React + Vite)
+## ⚙️ Environment Variables
 
-└── server/ # API Backend (Fastify + Postgres + Docker)
+### Backend
 
-## ⚙️ Variáveis de Ambiente
+Create a `server/.env` file:
 
-### Backend (colocar `server/.env`)
 ```env
 # Server
 PORT=3333
@@ -73,49 +91,67 @@ CLOUDFLARE_SECRET_ACCESS_KEY=""
 CLOUDFLARE_BUCKET="ftr-brevly-server"
 CLOUDFLARE_PUBLIC_URL=""
 ```
-### Frontend (colocar `web/.env`)
-```
+
+### Frontend
+
+Create a `web/.env` file:
+
+```env
 VITE_FRONTEND_URL=http://localhost:5173
 VITE_BACKEND_URL=http://localhost:3333
 ```
-## ▶️ Como Rodar o Projeto
-## Backend dentro da pasta server
-#### iniciar o banco de dados postgres
-```
+
+## ▶️ Running the Project
+
+### Backend
+
+Inside the `server` directory:
+
+#### Start the PostgreSQL database
+
+```bash
 docker compose up
 ```
-#### executar migrations
-```
+
+#### Run the database migrations
+
+```bash
 pnpm run db:migrate
 ```
-#### executar projeto em ambiente de desenvolvimento
-```
+
+#### Start the development environment
+
+```bash
 pnpm run dev
 ```
-#### OU: realizar build e executar a versão de produção
-```
+
+#### Alternatively, build and run the production version
+
+```bash
 pnpm run build
 pnpm run prd
 ```
-## Frontend dentro da pasta web
-```
+
+### Frontend
+
+Inside the `web` directory:
+
+```bash
 pnpm install
 pnpm run dev
 ```
-## Objetivo do Desafio
 
-Esse desafio faz parte da formação FullStack da Rocketseat e tem como objetivo:
+## 🎯 Challenge Goals
 
-- Consolidar conceitos de Frontend, Backend e DevOps;
+This challenge is part of Rocketseat's full-stack development postgraduate program. Its main goals are to:
 
-- Reforçar o uso de boas práticas com TypeScript e Docker;
+- Consolidate frontend, backend, and DevOps concepts
+- Reinforce software development best practices using TypeScript and Docker
+- Encourage autonomy and research beyond the content covered in class
+- Simulate a real-world product development scenario
 
-- Exercitar autonomia e pesquisa para além do conteúdo visto em aula;
+## 📝 Additional Information
 
-- Simular um cenário real de desenvolvimento de produto.
+This repository contains my implementation of the Phase 1 challenge: **Brev.ly**.
 
-## 📝 Considerações
-
-Esse repositório contém a resolução do desafio Fase 1 - Brev.ly.
-
-Feito com 💜 durante a pós-graduação da Rocketseat.
+Built with 💜 during my postgraduate program at Rocketseat.
