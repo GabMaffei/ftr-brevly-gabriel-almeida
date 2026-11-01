@@ -155,3 +155,19 @@ This challenge is part of Rocketseat's full-stack development postgraduate progr
 This repository contains my implementation of the Phase 1 challenge: **Brev.ly**.
 
 Built with 💜 during my postgraduate program at Rocketseat.
+
+## Source guide
+
+| Source | What to inspect |
+| --- | --- |
+| [HTTP server](server/src/infra/http/server.ts) | Fastify setup and route registration. |
+| [Create-link route](server/src/infra/http/routes/create-short-url.ts) | Request validation and duplicate-short-link handling. |
+| [Link lookup](server/src/app/functions/get-url-from-short-url.ts) | Original URL lookup and access-counter behavior. |
+| [CSV export](server/src/app/functions/export-registered-urls.ts) | Report generation and upload to object storage. |
+| [Database schema](server/src/infra/db/schemas/links.ts) | Persistent link fields and constraints. |
+
+## Local review workflow
+
+Install the backend dependencies with `pnpm install` from `server/` before using the migration and development commands above. Once PostgreSQL, the API, and the web app are running, create a short link, open it through the frontend, and return to the link list to inspect its access count. CSV export additionally requires your own working Cloudflare R2 configuration.
+
+Keep the REST API's lookup response separate from the browser redirect: the API returns the original URL, and the web application handles navigation to it. Use disposable example links when recording a portfolio demonstration.
